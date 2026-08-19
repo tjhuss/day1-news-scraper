@@ -17,7 +17,7 @@ def classify_category(title):
             return category
     return "Business"
 
-
+#scraper for fool.com
 def scrape_fool(page):
     page.goto("https://www.fool.com/investing/", wait_until="domcontentloaded")
     articles = page.locator("a:has(h5)").all()
@@ -53,7 +53,7 @@ def scrape_marketscreener(context):
     page.close()
     return results
 
-
+#scraper for tradingview.com
 def scrape_tradingview(page):
     page.goto("https://www.tradingview.com/news/", wait_until="domcontentloaded")
     articles = page.locator("a:has([data-qa-id='news-headline-title'])").all()
