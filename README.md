@@ -18,18 +18,17 @@ folder using a relative path):
 
 ```
 cd day1
-python3 day1_news_scraper.py     # scrapes fool.com, marketscreener.com, and
-                                  # tradingview.com; classifies each headline
-                                  # into a category; writes news_dataset.csv
+python3 day1_news_scraper.py
+# scrapes fool.com, marketscreener.com, and tradingview.com,
+# classifies each headline, and writes news_dataset.csv
 
 cd ../day2
-python3 day2_data_cleaning.py    # checks for missing values/duplicates,
-                                  # normalizes text, converts Category to a
-                                  # proper dtype; writes news_dataset_cleaned.csv
+python3 day2_data_cleaning.py
+# cleans news_dataset.csv and writes news_dataset_cleaned.csv
 
 cd ../day3
-python3 day3_database.py         # loads the cleaned dataset into a SQLite
-                                  # database (news_dataset_cleaned.db)
+python3 day3_database.py
+# loads the cleaned data into news_dataset_cleaned.db
 ```
 
 ## Project structure
@@ -39,6 +38,13 @@ python3 day3_database.py         # loads the cleaned dataset into a SQLite
 | `day1/` | `day1_news_scraper.py` and its output, `news_dataset.csv` (raw scraped data: URL, Title, Category) |
 | `day2/` | `day2_data_cleaning.py` and its output, `news_dataset_cleaned.csv` |
 | `day3/` | `day3_database.py` and its output, `news_dataset_cleaned.db` (SQLite database with an `articles` table, `url` as primary key) |
+
+## Opening the database file
+
+`news_dataset_cleaned.db` is a binary SQLite file, so it won't open by
+double-clicking like a CSV would. To view it: download and install
+[DB Browser for SQLite](https://sqlitebrowser.org/) (free, Windows/Mac/Linux),
+then open the file with it to browse the `articles` table directly.
 
 ## Categories
 
