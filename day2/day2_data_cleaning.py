@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_csv("news_dataset.csv")
+df = pd.read_csv("../day1/news_dataset.csv")
 
 print("Loaded:", len(df), "rows")
 print()

@@ -1,7 +1,7 @@
 import sqlite3
 import pandas as pd
 
-df = pd.read_csv("news_dataset_cleaned.csv")
+df = pd.read_csv("../day2/news_dataset_cleaned.csv")
 
 conn = sqlite3.connect("news_dataset_cleaned.db")
 cursor = conn.cursor()

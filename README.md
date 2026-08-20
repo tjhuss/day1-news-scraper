@@ -12,28 +12,33 @@ playwright install chromium
 
 ## Usage
 
-Run each script in order from the project folder:
+Each day's work lives in its own folder. Run them in order, `cd`-ing into
+each folder first (every script reads its input from the previous day's
+folder using a relative path):
 
 ```
+cd day1
 python3 day1_news_scraper.py     # scrapes fool.com, marketscreener.com, and
                                   # tradingview.com; classifies each headline
                                   # into a category; writes news_dataset.csv
 
+cd ../day2
 python3 day2_data_cleaning.py    # checks for missing values/duplicates,
                                   # normalizes text, converts Category to a
                                   # proper dtype; writes news_dataset_cleaned.csv
 
+cd ../day3
 python3 day3_database.py         # loads the cleaned dataset into a SQLite
                                   # database (news_dataset_cleaned.db)
 ```
 
-## Output files
+## Project structure
 
-| File | Description |
+| Folder | Contents |
 | --- | --- |
-| `news_dataset.csv` | Raw scraped data: URL, Title, Category |
-| `news_dataset_cleaned.csv` | Cleaned version of the above |
-| `news_dataset_cleaned.db` | SQLite database with an `articles` table (`url` as primary key) |
+| `day1/` | `day1_news_scraper.py` and its output, `news_dataset.csv` (raw scraped data: URL, Title, Category) |
+| `day2/` | `day2_data_cleaning.py` and its output, `news_dataset_cleaned.csv` |
+| `day3/` | `day3_database.py` and its output, `news_dataset_cleaned.db` (SQLite database with an `articles` table, `url` as primary key) |
 
 ## Categories
 
